@@ -12,6 +12,7 @@ class PostController extends Controller
     public function viewpost()
     {
         $title="Post List";
+
         $post=Post::all();
         return view('backend.layouts.post.listpost',compact('post','title'));
     }
@@ -37,13 +38,14 @@ public function addpost(Request $request){
             //generate file name
             $file_name=date('Ymdhms').'.'.$file->getClientOriginalExtension();
             //store into local directory
-            $file->storeAs('post',$file_name);
+            $file->storeAs('posts',$file_name);
         }
     }
         $post=Post::create([
             'title'=>$request->posttitle,
             'description'=>$request->description,
             'image'=>$file_name,
+            'imageDoc'=>$file_name,
             'price'=>$request->price,
             'region'=>$request->region,
             'sector'=>$request->sector,
@@ -68,5 +70,27 @@ public function addpost(Request $request){
 
 
     }
+public function editpost($id)
+{
+    $post=Post::find($id);
+    $category=Category::all();
+    $title="Post Form";
+    return view('backend.layouts.post.editpost',compact('post','category','title'));
+}
+public function updatepost(Request $request,$id)
+{
+ Post::find($id)->update([
+     'title'=>$request->posttitle,
+     'description'=>$request->description,
+     'price'=>$request->price,
+     'region'=>$request->region,
+     'sector'=>$request->sector,
+     'road'=>$request->road,
+     'plot'=>$request->plot,
+     'categoryId'=>$request->categoryId,
+     'status'=>$request->status
 
+ ]);
+ return redirect()->route('post.view')->with('success','updated successfully');
+}
 }

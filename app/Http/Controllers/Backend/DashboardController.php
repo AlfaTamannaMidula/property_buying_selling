@@ -10,6 +10,7 @@ class DashboardController extends Controller
     public function dashboard()
     {
      $title="Home";
-        return view('backend.master',compact('title'));
+
+        return view('backend.layouts.dashboard.index',compact('title'));
     }
 }

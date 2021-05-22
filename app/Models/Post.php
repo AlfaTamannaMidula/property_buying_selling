@@ -9,4 +9,9 @@ class Post extends Model
 {
     use HasFactory;
     protected $guarded=[];
+
+    protected $casts = [
+        'image'=>'array',
+        'imageDoc'=>'array'
+    ];
 }

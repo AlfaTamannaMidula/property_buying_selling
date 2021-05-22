@@ -35,27 +35,23 @@
 <!-- ============================================================== -->
 <div class="splash-container">
     <div class="card ">
-        <div class="card-header text-center"><a href="../index.html"><img class="logo-img" src="{{asset('backend')}}/assets/images/logo.png" alt="logo"></a><span class="splash-description">Please enter your user information.</span></div>
+        <div class="card-header text-center"><a href="#"><img class="logo-img" src="{{asset('backend')}}/assets/images/logo.png" alt="logo"></a><span class="splash-description">Please enter your user information.</span></div>
         <div class="card-body">
 
             <form action="{{route('admin.login')}}" method="post">
                 @csrf
-
                 @if($errors->any())
                     @foreach($errors->all() as $errors)
-                         <div class="alert alert-danger">{{$errors}}</div>
-                        @endforeach
-                        @endif
+                        <div class="alert alert-danger">{{$errors}}</div>
+                    @endforeach
+                @endif
+
+
                 <div class="form-group">
                     <input class="form-control form-control-lg"  name="email" type="text" placeholder="Email" autocomplete="off">
                 </div>
                 <div class="form-group">
                     <input class="form-control form-control-lg" name="password" type="password" placeholder="Password">
-                </div>
-                <div class="form-group">
-                    <label class="custom-control custom-checkbox">
-                        <input class="custom-control-input" type="checkbox"><span class="custom-control-label">Remember Me</span>
-                    </label>
                 </div>
                 <button type="submit" class="btn btn-primary btn-lg btn-block">Log in</button>
             </form>

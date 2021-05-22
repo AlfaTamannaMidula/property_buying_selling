@@ -17,10 +17,12 @@
                <th >Name</th>
                <th >Email</th>
                <th >Contact</th>
+               <th >NID</th>
                <th >Address</th>
                <th>Status</th>
                <th >Role</th>
                <th >Package Id</th>
+               <th >NID Image</th>
            </thead>
            <tbody>
            @foreach($user as $data )
@@ -29,13 +31,18 @@
                    <td>{{$data->name}}</td>
                    <td>{{$data->email}}</td>
                    <td>{{$data->contact}}</td>
+                   <td>{{$data->nid}}</td>
                    <td>{{$data->address}}</td>
                    <td>{{$data->status}}</td>
                    <td>{{$data->role}}</td>
                    <td>{{$data->packageId}}</td>
 
+                   <td>
+                           <li data-thumb="assets/img/property-1/property1.jpg" style="margin-bottom: 20px">
+                               <img src="{{url('images/nids/',$data->imageNid)}}" height="100px" width="100px" />
+                           </li>
 
-
+                   </td>
                    <td>
                        <a class="btn btn-pinterest" href="">update</a>
                        <a class="btn btn--blue" href="{{route('user.delete',$data->id)}}">delete</a>

@@ -68,10 +68,12 @@
                         <div id="submenu-5" class="collapse submenu" style="">
                             <ul class="nav flex-column">
                                 <li class="nav-item">
-                                    <a class="nav-link" href="pages/general-table.html">view payments</a>
+                                <li><a href="{{route('purchase.request.list')}}">Purchase Request</a></li>
+                                <li><a href="{{route('purchase.history')}}">Purchase History</a></li>
+                                <li><a href="{{route('disapprove.purchase')}}">Purchase Disapproved</a></li>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="pages/data-tables.html">Payment history</a>
+                                    <a class="nav-link" href="pages/data-tables.html"></a>
                                 </li>
                             </ul>
                         </div>

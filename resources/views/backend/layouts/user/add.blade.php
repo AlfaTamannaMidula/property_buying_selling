@@ -79,6 +79,29 @@
                                         </div>
                                     </div>
                                 </div>
+                            <div class="form-row m-b-55">
+                                <div class="name">NID</div>
+                                <div class="value">
+                                    <div class="row row-refine">
+
+                                        <div class="col-9">
+                                            <div class="input-group-desc">
+                                                <input class="input--style-5" type="text" name="nid">
+                                                <label class="label--desc">NID Number</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-row">
+                                <div class="name">Image</div>
+                                <div class="value">
+                                    <div class="input-group">
+                                        <input class="input--style-4" type="file" name="image">
+                                    </div>
+                                </div>
+                            </div>
+
                                 <div class="form-row">
                                     <div class="name">Role</div>
                                     <div class="value">

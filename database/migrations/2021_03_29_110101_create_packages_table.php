@@ -20,6 +20,7 @@ class CreatePackagesTable extends Migration
             $table->text('description');
             $table->text('price');
             $table->string('status');
+            $table->integer('numberofPosts');
             $table->string('paymentStatus')->nullable();
 
             $table->timestamps();

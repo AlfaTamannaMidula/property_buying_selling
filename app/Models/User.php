@@ -11,6 +11,12 @@ class User extends Authenticatable
 {
     use HasFactory, Notifiable;
     protected $guarded=[];
+
+    //protected $casts = [
+        //'imageNid'=>'array'
+   // ];
+
+
     public function packageName(){
 
         return $this->belongsTo(Package::class,'packageId','id');}
@@ -43,4 +49,7 @@ class User extends Authenticatable
 //    protected $casts = [
 //        'email_verified_at' => 'datetime',
 //    ];
+    public function userpackages(){
+        return $this->hasMany(Userpackage::class,'userId','id');
+    }
 }

@@ -1,4 +1,4 @@
-@extends('master')
+@extends('backend.master')
 @section('page')
     <div class="modal-body">
 

@@ -42,7 +42,10 @@
                                 <option value="Inactive">Inactive</option>
                             </select>
                         </div>
-
+                        <div class="form-group">
+                            <label for="dis">Number of Posts</label>
+                            <textarea  name="numberofPosts" id="dis"  class="form-control" cols="5" rows="3" ></textarea>
+                        </div>
 
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -68,6 +71,7 @@
             <th scope="col">Package Details</th>
             <th scope="col">Price</th>
             <th scope="col">Status</th>
+            <th scope="col">Number of Posts</th>
             <th scope="col">Action</th>
         </tr>
         </thead>
@@ -79,6 +83,7 @@
                 <td>{{$package->description}}</td>
                 <td>{{$package->price}}</td>
                 <td>{{$package->status}}</td>
+                <td>{{$package->numberofPosts}}</td>
                 <td>{{$package->paymenrStatus}}</td>
             <td>
                 <a class="btn btn-pinterest" href="">view</a>

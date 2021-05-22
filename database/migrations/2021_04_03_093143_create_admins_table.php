@@ -17,7 +17,7 @@ class CreateAdminsTable extends Migration
             $table->id();
             $table->string('name','60');
             $table->string('email')->unique();
-            $table->integer('contact');
+            $table->string('contact')->unique();
             $table->text('address');
             $table->string('role','20');
             $table->string('status','10');

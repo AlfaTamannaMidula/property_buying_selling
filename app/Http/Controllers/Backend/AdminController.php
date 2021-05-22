@@ -47,14 +47,15 @@ class AdminController extends Controller
         return view('backend.layouts.adminlogin.login',compact('title'));
     }
     public function adminValidation(Request $request) {
-      $request->validate([
 
+      $request->validate([
           'email'=>'required|email',
           'password'=>'required|min:6'
       ]);
+
       $credentials = $request->only('email','password');
-      if(Auth::attempt($credentials)) {
-          $request->session()->regenerate();
+
+      if(Auth::guard('admin')->attempt($credentials)) {
           return redirect()->route('dashboard');
       }
           return back()->withErrors([
@@ -64,7 +65,7 @@ class AdminController extends Controller
 
 
 public  function adminLogout(){
-        Auth::logout();
+        Auth::guard('admin')->logout();
         return redirect()->route('adminlogin.view')->with('success','Logout Successfully');
 }
 }

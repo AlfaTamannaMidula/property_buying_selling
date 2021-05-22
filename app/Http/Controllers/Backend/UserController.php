@@ -35,16 +35,36 @@ class UserController extends Controller
 
     public function adduser(Request $request)
     {
+        $imageNid = "";
+
+        if ($request->hasFile('imageNidkoi')) {
+            $files = $request->file('imageNidkoi');
+
+            //foreach ($files as $key=> $file){
+
+            if ($files->isValid()) {
+
+                $file_name_nid= date('Ymdhms'). '.' . $files->getClientOriginalExtension();
+
+                $files->storeAs('nids', $file_name_nid);
+                $imageNid=  $file_name_nid;
+
+
+            }
+        }
 
         User::create([
             'name' => $request->name,
             'email' => $request->email,
             'contact' => $request->contact,
+            'nid' => $request->nid,
+            'imageNid' => $imageNid,
             'address' => $request->address,
             'status' => $request->status,
             'role' => $request->role,
             'password' => $request->password,
-            'packageId' => $request->packageId,
+            'packageId' => $request->packageId
+
 
 
         ]);
