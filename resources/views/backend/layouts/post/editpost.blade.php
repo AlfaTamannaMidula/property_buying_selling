@@ -17,7 +17,7 @@
                 <meta name="keywords" content="Colorlib Templates">
 
                 <!-- Title Page-->
-                <title>Au Register Forms by Colorlib</title>
+                <title>Property Buying Selling </title>
 
 
             </head>
@@ -47,14 +47,14 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="form-row">
-                                <div class="name">Image</div>
-                                <div class="value">
-                                    <div class="input-group">
-                                        <input value="{{$post->image}}"class="input--style-4" type="file" name="image">
-                                    </div>
-                                </div>
-                            </div>
+{{--                            <div class="form-row">--}}
+{{--                                <div class="name">Image</div>--}}
+{{--                                <div class="value">--}}
+{{--                                    <div class="input-group">--}}
+{{--                                        <input value="{{$post->image}}"class="input--style-4" type="file" name="image">--}}
+{{--                                    </div>--}}
+{{--                                </div>--}}
+{{--                            </div>--}}
 
                             <div class="form-row">
                                 <div class="name">Price</div>
@@ -133,6 +133,10 @@
                             <div>
                                 <button class="btn btn--radius-2 btn--red" type="submit">Add Post</button>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </form>
     </div>
     </div>

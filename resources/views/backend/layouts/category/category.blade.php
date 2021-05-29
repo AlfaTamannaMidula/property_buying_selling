@@ -74,7 +74,7 @@
             <td>{{$categories->description}}</td>
             <td>{{$categories->status}}</td>
             <td>
-                <a class="btn btn-pinterest" href="">update</a>
+
                 <a class="btn btn--blue" href="{{route('category.delete',$categories->id)}}">delete</a>
             </td>
         @endforeach

@@ -10,7 +10,7 @@
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet">
     <style type="text/css">
         body {
-            color: #797979;
+            color: #c1e2b3;
             background: #f1f2f7;
             font-family: 'Open Sans', sans-serif;
             padding: 0px !important;

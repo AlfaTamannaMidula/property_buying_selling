@@ -11,6 +11,12 @@
            </div>
        @endif
 
+       @if (session('Danger'))
+           <div class="alert alert-success" role="alert">
+               {{ session('Danger') }}
+           </div>
+       @endif
+
        <table class="table table-bordered table-hover">
            <thead>
                <th >ID</th>
@@ -44,7 +50,7 @@
 
                    </td>
                    <td>
-                       <a class="btn btn-pinterest" href="">update</a>
+
                        <a class="btn btn--blue" href="{{route('user.delete',$data->id)}}">delete</a>
                    </td>
                </tr>

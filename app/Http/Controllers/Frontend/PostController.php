@@ -78,9 +78,9 @@ class PostController extends Controller
 
     public function viewInterestedUsers()
     {
-        $interestedUsers=Interest::with('userinterest','postInterests')->where('postAuthorId',auth('user')->user()->id)->where('status','pending')->get();
-        $approvedUsers=Interest::with('userinterest','postinterest')->where('postAuthorId',auth('user')->user()->id)->where('status','Approved')->get();
-        $disapprovedUsers=Interest::with('userinterest','postinterest')->where('postAuthorId',auth('user')->user()->id)->where('status','Disapproved')->get();
+        $interestedUsers=Interest::with('userinterest','postInterest')->where('postAuthorId',auth('user')->user()->id)->where('status','pending')->get();
+        $approvedUsers=Interest::with('userinterest','postInterest')->where('postAuthorId',auth('user')->user()->id)->where('status','Approved')->get();
+        $disapprovedUsers=Interest::with('userinterest','postInterest')->where('postAuthorId',auth('user')->user()->id)->where('status','Disapproved')->get();
 
         return view('frontend.layouts.interest.interestedUserList',compact('interestedUsers','approvedUsers','disapprovedUsers'));
 

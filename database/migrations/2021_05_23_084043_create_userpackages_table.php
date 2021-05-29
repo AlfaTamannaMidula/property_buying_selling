@@ -15,8 +15,8 @@ class CreateUserpackagesTable extends Migration
     {
         Schema::create('userpackages', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('userId');
-            $table->integer('package_id');
+            $table->foreignId('userId')->constrained('users')->onDelete('restrict');
+            $table->foreignId('package_id')->constrained('packages')->onDelete('restrict');;
             $table->integer('package_price');
             $table->text('packageName');
             $table->integer('numberOfPosts');

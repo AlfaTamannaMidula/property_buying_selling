@@ -3,11 +3,11 @@
 
 
 
-<div class="profile-info col-md-12">
+<div class="profile-info col-md-12" style="background: #c1e2b3">
 
     <div class="panel">
 
-        <div class="panel-body bio-graph-info">
+        <div class="panel-body bio-graph-info"style="background: #c1e2b3">
             <h1>Bio Graph</h1>
             <div class="row">
                 <div class="bio-row">

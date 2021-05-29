@@ -62,12 +62,9 @@
 
 
 
-<nav class="navbar navbar-default ">
+<nav class="navbar navbar-default " style="background:black">
     <div class="container">
         <!-- Brand and toggle get grouped for better mobile display -->
-
-
-
 
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -75,27 +72,40 @@
             <div class="button navbar-right">
 
 
-                @auth('user')
-                    <span style="color:white;">{{auth('user')->user()->name}}</span>  <a class="btn btn-danger" href="{{route('logout')}}"> Logout</a>
-                @else
-                    <a class="navbar-btn nav-button wow bounceInRight login" href="{{route('login.registration.form')}}">Login / Registration</a>
-                @endauth
+
             </div>
+            <div class="col-md-12">
+            <div class="col-md-12">
             <ul class="main-nav nav navbar-nav navbar-right">
 
                 <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="{{route('homepage')}}">Home</a></li>
                 <li class="wow fadeInDown" data-wow-delay="0.1s"><a class="" href="{{route('post.all')}}">Properties</a></li>
 
                 <li class="wow fadeInDown" data-wow-delay="0.4s"><a href="{{route('contact.details')}}">Contact</a></li>
+                @auth('user')
                 <li class="wow fadeInDown" data-wow-delay="0.4s"><a href="{{route('user.profile')}}">User Profile</a></li>
+                @endauth
+
+                @auth('user')
+                    <span style="color:white;">{{auth('user')->user()->name}}</span>  <a class="btn btn-danger" href="{{route('logout')}}"> Logout</a>
+                @else
+                    <a class="btn btn-warning" href="{{route('login.registration.form')}}">Login / Registration</a>
+                @endauth
 
 
 
             </ul>
+            </div>
+            </div>
         </div><!-- /.navbar-collapse -->
+<div class="col-md-12">
+    <div class="col-md-4"></div>
+    <div class="col-md-4"></div>
+    <div class="col-md-2"></div>
+    <div class="col-md-2">
 
-
-
+    </div>
+</div>
             </ul>
         </div><!-- /.navbar-collapse -->
     </div><!-- /.container-fluid -->

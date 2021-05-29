@@ -1,6 +1,6 @@
 @include('frontend.partials.header')
 <section
-    class="fa-exclamation-triangle">
+    class="fa-exclamation-triangle" style="background: #FFFFFF">
     <div class="container">
         <div class="row">
 <h>Request Table</h>
@@ -25,7 +25,7 @@
     @foreach($interestedUsers as $datas)
         <tr>
             <td> {{$datas->userinterest->name}}</td>
-            <td> {{$datas->postInterests->title}}</td>
+            <td> {{$datas->postInterest->title}}</td>
             <td> {{$datas->remarks}}</td>
             <td>@if($datas->status=='pending'||$data->status=='Disapproved')
                     Accept to see contact @else{{$datas->userContact}}
@@ -37,6 +37,7 @@
             <td> {{$datas->status}}</td>
             <td>
                 <a class="btn-outline-success" href="{{route('approve.request',[$datas->id,$approve='approve'])}}">Approve</a>
+                <br>
                 <a class=" btn-outline-light" href="{{route('approve.request',[$datas->id,$approve='disapprove'])}}">Disapprove</a>
             </td>
         </tr>
@@ -133,14 +134,8 @@
 </table>
             </div>
     </div>
-    </section>
 
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+    </section>
 
 
 @include('frontend.partials.footer')

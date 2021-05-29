@@ -7,6 +7,7 @@ use App\Http\Controllers\Frontend\ContactController;
 use App\Http\Controllers\Frontend\UserpackageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\CategoryController;
+use App\Http\Controllers\Backend\ReportController;
 use App\Http\Controllers\Backend\PostController as BackendPostController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\UserController as BackendUserController;
@@ -162,6 +163,10 @@ Route::get('/package/delete/{id}',[PackageController::class,'deletepackage'])->n
        Route::get('/approve/request/{request_id}{name}',[PackageController::class,'approveRequest'])->name('approve.purchase.request');
        Route::get('/disapprove/request/{id}',[PackageController::class,'disapproveRequest'])->name('disapprove.purchase.request');
        Route::get('/disapprove/after/approve/{id}',[PackageController::class,'disapproveAfterApprove'])->name('disapprove.after.approve');
+
+
+//Report generate
+       Route::get('payment/report',[ReportController::class,'paymentreport'])->name('payment.report');
 
 
 

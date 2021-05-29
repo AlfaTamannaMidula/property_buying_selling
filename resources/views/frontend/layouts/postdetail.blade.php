@@ -2,13 +2,14 @@
 
 
 
-<div class="content-area single-property" style="background-color: #FCFCFC;">&nbsp;
+ <div class="content-area single-property" style="background-color: #c1e2b3;">&nbsp;
 
     <div class="fixed-top">
 
-        <div class="col-xs-offset-8 col-sm-offset-8 dealer-face">
             <h3 class="pull-right">
-                Are you interested in this property? than click here to connect with user.
+                <center style="padding: 0px 187px">
+                Are you interested in this property?<br> than click here to connect with user.
+                <br>
                 @auth('user')
                     @if($checkPost)
                         <p>Already interested</p>
@@ -20,23 +21,13 @@
                 @endauth
                 <br>
                 <br>
-
+                </center>
             </h3>
 
-
-        </div>
     </div>
     <div class="container">
 
         <div class="fixed-top" >
-
-            <span class="property-info-entry">
-                                <h4 class="s-property-title">Title</h4>
-                                        <span class="property-info-label" >{{$postdetail->title}}</span>
-
-                                    </span>
-
-            <br>
 
             <div class="col-md-8 single-property-content prp-style-1 ">
                 <div class="row">
@@ -55,7 +46,7 @@
                             <ul id="image-gallery" class="gallery list-unstyled cS-hidden">
                                 @foreach($postdetail->image as $key=>$image)
                                 <li data-thumb="assets/img/property-1/property1.jpg" style="margin-bottom: 20px">
-                                    <img src="{{url('images/posts/',$image)}}" height="300px" width="400px" />
+                                    <img src="{{url('images/posts/',$image)}}" height="300px" width="800px" />
                                 </li>
                                 @endforeach
 
@@ -64,6 +55,15 @@
                     </div>
                 </div>
 
+                <br>
+                <span class="property-info-entry">
+                                <h4 class="s-property-title">Title</h4>
+                                        <span class="property-info-label" >{{$postdetail->title}}</span>
+
+                                    </span>
+
+                <br>
+                <br>
                 <br>
 
                 <div class="single-property-wrapper">
@@ -122,28 +122,8 @@
                                     </span>
 
                         </div>
-                        <div class="col-xs-6 col-sm-3 col-md-3 p-b-15">
-
-                            <span class="property-info-entry">
-                                <h4 class="s-property-title">longitude</h4>
-                                        <span class="property-info-label" >{{$postdetail->longitude}}</span>
-
-                                    </span>
 
 
-
-                        </div>
-                        <div class="col-xs-6 col-sm-3 col-md-3 p-b-15">
-
-                            <span class="property-info-entry">
-                                <h4 class="s-property-title">latitude</h4>
-                                        <span class="property-info-label" >{{$postdetail->latitude}}</span>
-
-                                    </span>
-
-
-
-                        </div>
                     <!-- .property-meta -->
 
                     <div class="section">
@@ -155,14 +135,7 @@
                     <!-- End description area  -->
 
 
-                    <div class="section property-video">
 
-                        <div class="video-thumb">
-                            <a class="video-popup" href="yout" title="Virtual Tour">
-                                <img src="assets/img/property-video.jpg" class="img-responsive wp-post-image" alt="Exterior">
-                            </a>
-                        </div>
-                    </div>
                     <!-- End video area  -->
 
                 </div>
@@ -171,6 +144,10 @@
 
 </div>
     </div>
-
+    <br>
+    <br>
+    <br>
+     <br>
+     <br>
 
 @include('frontend.partials.footer')

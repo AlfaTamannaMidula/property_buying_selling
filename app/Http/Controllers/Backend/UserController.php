@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Package;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Throwable;
 
 
 class UserController extends Controller
@@ -74,14 +75,18 @@ class UserController extends Controller
     public function deleteuser($id)
     {
 //        first get the product
-        $user=user::find($id);
-        //then delete it
-        $user->delete();
+        $user = user::find($id);
+        try {
+            //then delete it
+            $user->delete();
+return  redirect()->route('user.view');
+        }
+    catch(Throwable $e)
+        {
+            if ($e->getCode() == '23000') {
 
-
-        return redirect()->back()->with('success','User Deleted Successfully.');
-
-
-
-    }
+                return redirect()->back()->with('Danger', 'You can not delete user.');
+            }
+        }
+   }
 }

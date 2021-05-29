@@ -18,10 +18,10 @@ class Interest extends Model
 
 
     }
-    public function interestPosts()
+   public function interestPosts()
     {
-        return $this->belongsTo(Post::class,'postId','id');
-    }
+       return $this->belongsTo(Post::class,'postId','id');
+   }
 
     public function userinterestsdetails()
     {

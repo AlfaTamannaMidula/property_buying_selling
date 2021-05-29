@@ -78,6 +78,10 @@
                             </ul>
                         </div>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('payment.report')}}" ><i class="fa fa-fw fa-rocket"></i>Report Generate</a>
+
+                    </li>
                 </ul>
             </div>
         </nav>
